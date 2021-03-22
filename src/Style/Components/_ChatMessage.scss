@@ -1,0 +1,32 @@
+.chatMessage {
+    &__container {
+        padding: 8px 20px;
+        display: flex;
+    }
+    &__userPic {
+        margin-right: 8px;
+        >img {
+            width: 36px;
+            height: 36px;
+            border-radius: 2px;
+            overflow: hidden;
+            object-fit: cover;
+            display: flex;
+            align-items: center;
+        }
+        
+    }
+    &__messageContent {
+        &--name {
+            font-weight: 900;
+            font-size: 15px;
+            line-height: 1.4;
+            > span {
+                font-weight: 400;
+                color: rgb (97, 96, 97);
+                margin-left: 8px;
+                font-size: 12px;
+            }
+        }
+    }
+}
