@@ -8,4 +8,8 @@
 .app-main {
     display: grid;
     grid-template-columns: 260px auto;
+    @include for-size (tablet) {
+        display: flex;
+        flex-direction: column;
+    }
 }

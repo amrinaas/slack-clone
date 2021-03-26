@@ -12,10 +12,14 @@
     &__main {
         display: flex;
         margin: 0 16px;
+        @include for-size (tablet) {
+            display: none;
+        }
     }
     &__search--input {
-        min-width: 400px;
+        min-width: 300px;
         margin: 0 16px;
+
         >input {
             width: 100%;
             border-radius: 6px;
@@ -24,6 +28,7 @@
             padding: 4px 8px;
             color: white;
             box-shadow: inset 0 0 0 1px rgb(104, 74, 104);
+            
         }
     }
     &__user--container {
@@ -36,15 +41,13 @@
     &__user--name {
         padding-right: 16px;
     }
-    &__user--image {
-        width: 28px;
-        height: 28px;
-        object-fit: cover;
-        border-radius: 3px;
-        border: 2px solid white;
-        >img {
-            width: 100%;
-            cursor: pointer;
-        }
-    }
+}
+
+.img-dropdown {
+    width: 29px;
+    height: 30px;
+    object-fit: cover;
+    border-radius: 3px;
+    border: 2px solid white;
+    cursor: pointer;
 }

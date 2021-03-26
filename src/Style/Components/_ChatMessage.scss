@@ -3,6 +3,9 @@
         padding: 8px 20px;
         display: flex;
     }
+    &__container:hover {
+        background-color: rgba(182, 182, 182, 0.541);
+    }
     &__userPic {
         margin-right: 8px;
         >img {

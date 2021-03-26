@@ -9,6 +9,9 @@
             padding-left: 19px;
             justify-content: space-between;
             border-bottom: 1px solid #532753;
+            @include for-size (tablet) {
+                display: none;
+            }
             &--message {
                 width: 36px;
                 height: 36px;
@@ -26,6 +29,9 @@
     }
     &__main {
         padding-top: 20px;
+        @include for-size (tablet) {
+            display: none;
+        }
         &--items {
             color: rgb(188, 171, 188);
             display: grid;
@@ -63,20 +69,6 @@
     }
 }
 
-.modal-container {
-    position: absolute;
-  }
-  
-.modal-overlay-center {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 99;
-  }
+.MuiSvgIcon-root {
+    cursor: pointer;
+}
