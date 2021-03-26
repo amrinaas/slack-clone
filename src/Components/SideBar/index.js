@@ -1,14 +1,21 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useHistory } from 'react-router-dom';
 import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
 import AddIcon from '@material-ui/icons/Add';
 import { sidebarItems } from '../../Data/SideBarData';
 import db from '../../firebase';
-// import Modal from 'react-modal';
 
 const Sidebar = (props) => {
 	console.log(props);
-	// const [isModalOpen, setIsModalOpen] = useState(false);
 
+	const history = useHistory();
+
+	const goToChannel = (id) => {
+		if (id) {
+			console.log('Ini ID', id);
+			history.push(`/room/${id}`);
+		}
+	};
 	const addChannel = () => {
 		const promptName = prompt('Input your New Channel');
 		if (promptName) {
@@ -21,7 +28,7 @@ const Sidebar = (props) => {
 	return (
 		<div className='sidebar__container'>
 			<div className='sidebar__container__workspace'>
-				<div className='sidebar__container__workspace--name'>Riri</div>
+				<div className='sidebar__container__workspace--name'>{props.user.name}</div>
 				<div className='sidebar__container__workspace--message'>
 					<AddCircleOutlineIcon />
 				</div>
@@ -37,23 +44,16 @@ const Sidebar = (props) => {
 			<div className='sidebar__channel'>
 				<div className='sidebar__channel--new'>
 					<div>Channels</div>
-					<AddIcon onClick={addChannel} />
-					{/* <AddIcon onClick={() => setIsModalOpen(true)} /> */}
+					<AddIcon onClick={addChannel} className='addIcon' />
 				</div>
 				<div className='sidebar__channel--list'>
 					{props.rooms.map((item) => (
-						<div className='sidebar__channel--list-name'># {item.name}</div>
+						<div onClick={() => goToChannel(item.id)} className='sidebar__channel--list-name'>
+							# {item.name}
+						</div>
 					))}
 				</div>
 			</div>
-			{/* <Modal
-				isOpen={isModalOpen}
-				onRequestClose={() => {
-					setIsModalOpen(false);
-				}}
-				className='modal-container'
-				overlayClassName='modal-overlay-center'
-				contentLabel='Add Channel'></Modal> */}
 		</div>
 	);
 };
