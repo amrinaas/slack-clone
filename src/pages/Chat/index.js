@@ -1,8 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Header from '../../Components/Header';
-import Sidebar from '../../Components/SideBar';
 import Body from '../../Components/Body';
-import Footer from '../../Components/Footer';
 import db from '../../firebase';
 
 const Chat = (props) => {
@@ -22,16 +19,11 @@ const Chat = (props) => {
 		getChannels();
 	}, []);
 
-	// console.log(rooms);
-
 	return (
 		<div>
-			<Header header={props.user} />
 			<div className='chat__body__container'>
-				<Sidebar rooms={rooms} />
-				<Body />
+				<Body body={props.user} />
 			</div>
-			<Footer />
 		</div>
 	);
 };
