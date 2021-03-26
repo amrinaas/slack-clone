@@ -1,0 +1,15 @@
+.select-channel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    > img {
+        width: 200px;
+        height: auto;
+    }
+    > p {
+        font-size: 24px;
+        font-weight: 600;
+        margin-top: 20px;
+    }
+}

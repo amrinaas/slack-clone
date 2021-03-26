@@ -1,8 +1,10 @@
 .body {
     &__container {
         display: grid;
-        grid-template-rows: 64px auto min-content;
-        height: 90vh;
+        height: 95vh;
+        grid-template-rows: 60px minmax(0, 1fr);
+        min-height: 0;
+
     }
     &__header {
         padding: 0 20px;
@@ -30,46 +32,9 @@
             }
         }
     }
+    &__message {
+        display: flex;
+        flex-direction: column;
+        overflow-y: scroll;
+    }
 }
-
-// .body {
-//     &__container {
-//         background-color: white;
-//         height: 90vh;
-//         display: flex;
-//         flex-direction: column;
-//         // justify-content: space-between;
-//     }
-//     &__inform {
-//         display: flex;
-//         justify-content: space-between;
-//         border-bottom: rgba(202, 199, 199, 0.705) 1px solid;
-//         padding: 10px 0 10px 15px;
-//         &--up {
-//             font-weight: 700;
-//             display: flex;
-//         }
-//         &--down {
-//             color: rgb(90, 89, 89);
-//         }
-//     }
-//     &__details {
-//         display: flex;
-//         align-items: center;
-//         padding-right: 15px;
-//         &--text {
-//             padding-right: 8px;
-//         }
-//     }
-//     &__chat {
-//         height: 81vh;
-//         display: flex;
-//         flex-direction: column;
-//         justify-content: space-between;
-//         padding-left: 15px;
-//             >input {
-//                 height: 35px;
-//                 width: 98%;
-//             }
-//     }
-// }
